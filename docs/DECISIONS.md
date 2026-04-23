@@ -6,15 +6,20 @@ Living doc. Each entry has a status, the current answer, and the reasoning so fu
 
 ## 1. Surface — where does TokePal live?
 
-**Decision:** Claude Code hook (plugin).
+**Decision:** Split capture from display.
+
+- **Capture (silent):** Claude Code hook writes session data to `~/.tokepal/state.json`. No output in the Claude Code session. TokePal never fights `/buddy` for screen space.
+- **Display (user-chosen):** The user opens a viewer wherever they want.
+  - V1: `tokepal status` (on-demand snapshot in any terminal) and `tokepal watch` (live-updating TUI in a dedicated pane or second terminal).
+  - V1.5+: optional menu-bar app (macOS) / tray icon (Win/Linux).
+  - V2+: optional local web dashboard (`tokepal serve`) for richer card views and sharing.
 
 **Why:**
-- Lowest install friction — one plugin install, no separate binary, no PATH surgery.
-- Complementary to `/buddy`, not competing. Positions TokePal as the *raise* product that sits alongside Anthropic's *meet* product.
-- Direct access to session transcripts, which is how we measure behavior.
-- Distribution via the Claude Code plugin registry is the widest-accepted channel for this audience.
+- Auto-spawning terminal windows is invasive, cross-platform messy, and reads as malware-like behavior to devs. Hard no on that as a default.
+- Decoupling capture from display means TokePal works for tmux users, multi-monitor users, menu-bar-only users, and "I only check it sometimes" users without picking one winner.
+- The hook stays silent and invisible in Claude Code — no visual competition with `/buddy`.
 
-**Deferred:** Standalone CLI and VS Code extension. Both are additive; neither is V1.
+**Deferred:** Standalone CLI for non-Claude-Code sessions, VS Code extension, auto-spawn-window flag (`tokepal watch --spawn`) as opt-in for users who want it.
 
 ---
 

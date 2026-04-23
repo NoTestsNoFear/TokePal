@@ -148,7 +148,7 @@ A healthier formula: token usage contributes a lot, but XP and currency are shap
 
 ## Roadmap
 
-Every version is evaluated against a single sentence: *does this strengthen "raise, don't meet"?* If not, it's cut or deferred. The full plan with stop-gates and rationale lives in [docs/ROADMAP.md](docs/ROADMAP.md). Open questions and decisions live in [docs/DECISIONS.md](docs/DECISIONS.md).
+Every version is evaluated against a single sentence: *does this strengthen "raise, don't meet"?* If not, it's cut or deferred. The full plan with stop-gates and rationale lives in [docs/ROADMAP.md](docs/ROADMAP.md). Open questions and decisions live in [docs/DECISIONS.md](docs/DECISIONS.md). A step-by-step V0–V1 walkthrough for collaborators is in [docs/PLAN.md](docs/PLAN.md).
 
 ### V0 — Foundations
 
